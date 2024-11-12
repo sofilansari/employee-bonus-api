@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 public class CurrencyEmployeesDto {
-    private String currency;
-    private List<EmployeeDto> employees;
+	private String currency;
+    private List<EmployeeSummaryDto> employees;
 }
 

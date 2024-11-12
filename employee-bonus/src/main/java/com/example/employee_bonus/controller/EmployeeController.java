@@ -37,17 +37,17 @@ public class EmployeeController {
         return ResponseEntity.ok().build();
     }
     
-    
-    @GetMapping("/employee-bonus")
-    public ResponseEntity<EmployeeRequestDto> getEligibleEmployees(
-            @RequestParam("date") @DateTimeFormat(pattern = "MMM-dd-yyyy") LocalDate date) {
-        
-        List<CurrencyEmployeesDto> eligibleEmployeesData = employeeService.getEligibleEmployees(date);
-        
-        EmployeeRequestDto dto = new EmployeeRequestDto();
-        dto.setErrorMessage("");
-        dto.setData(eligibleEmployeesData);
+	
+	@GetMapping("/employee-bonus")
+	public ResponseEntity<EmployeeRequestDto> getEligibleEmployees(
+	        @RequestParam("date") @DateTimeFormat(pattern = "MMM-dd-yyyy") LocalDate date) {
+	    
+	    List<CurrencyEmployeesDto> eligibleEmployeesData = employeeService.getEligibleEmployees(date);
+	    
+	    EmployeeRequestDto dto = new EmployeeRequestDto();
+	    dto.setErrorMessage("");
+	    dto.setData(eligibleEmployeesData);
 
-        return ResponseEntity.ok(dto);
-    }
+	    return ResponseEntity.ok(dto);
+	}
 }
